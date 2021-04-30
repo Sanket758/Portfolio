@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Resume
+from .models import Resume, Project
 # from django.http import HttpResponse
 
 
@@ -18,4 +18,7 @@ def contact(request):
 
 
 def portfolio(request):
-	return render(request, 'portfolio.html')
+	context = {
+		'projects': Project.objects.all()
+	}
+	return render(request, 'portfolio.html', context)
