@@ -1,8 +1,9 @@
 asgiref 
 certifi==2020.12.5
-Django 
+Django
 gunicorn==20.1.0
 Pillow==8.2.0
 psycopg2 
 pytz 
 sqlparse 
+whitenoise==5.2.0
