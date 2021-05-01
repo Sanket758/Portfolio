@@ -16,7 +16,7 @@ class Resume(models.Model):
 	Languages = models.CharField(max_length=30)
 
 class Project(models.Model):
-	Title = models.CharField(max_length=30)
+	Title = models.CharField(max_length=50)
 	ProjectType = models.CharField(max_length=30)
 	Client = models.CharField(max_length=30)
 	Technology = models.CharField(max_length=30)
@@ -24,5 +24,15 @@ class Project(models.Model):
 	Thumbnail = models.ImageField(upload_to='images/', )
 	YoutubeLink = models.CharField(max_length=150, blank=True)
 
+	def __str__(self):
+		return self.Title
+
+
+class Blog(models.Model):
+	Title = models.CharField(max_length=70)
+	Description = models.TextField()
+	BlogLink = models.CharField(max_length=150, blank=True)
+	Thumbnail = models.ImageField(upload_to='images/', )
+	
 	def __str__(self):
 		return self.Title
